@@ -1,0 +1,43 @@
+h1{
+    text-align: center;
+    border: black;
+}
+h1::before{
+    content:"\2706";
+}
+* {
+    box-sizing: border-box;
+  }
+ 
+  dl > div {
+    background:rgba(236, 207, 76, 0.945);
+    padding: 2px 2px 0 0;
+  }
+  
+  dt {
+    background:rgba(8, 8, 8, 0.836);
+    border-bottom: 1px solid #323332;
+    border-top: 1px solid #323332;
+    color: rgb(255, 255, 255);
+    font: bold 18px/21px Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 2px 0 0 12px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+  }
+  
+  dd {
+    font: bold 20px/45px Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0 0 0 12px;
+    
+  }
+  
+  dd + dd {
+    border-top: 1px solid #CCC;
+  }
+
+  body {
+      background: #8e39dda4;
+  }
