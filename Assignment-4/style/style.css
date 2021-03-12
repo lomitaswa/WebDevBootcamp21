@@ -1,0 +1,96 @@
+*{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0px;
+}
+
+/*  Navigation Bar */
+nav {
+    display: flex;
+    background-color: #333;
+    overflow: hidden;
+    position: -webkit-sticky;
+    position: sticky;
+    box-shadow: lightslategray;
+  }
+  
+  nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: thistle ;
+    font-size: 20px;
+    font-family: "Gill Sans", sans-serif;
+  }
+  
+  
+  nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  nav img {
+    float: left;
+    position: relative;
+    margin: 10px 15px 15px 10px;
+  }
+
+  /* Main */
+
+  #wrapper{
+    max-width: 100%;
+    margin: 0 auto;
+    background-color:white;
+    padding-top: 20px;
+  }
+  #carousel{
+    max-width: 768px;
+    margin: 0 auto;
+    animation: animate 40s infinite cubic-bezier(0.165, 0.84, 0.44, 1) alternate;
+    color: plum;
+  }
+
+  @keyframes animate{
+    00%, 10% {background-image: url(../images/death-note.jpg);}
+    11%, 20% {background-image: url(../images/aot-1.jpg);}
+    21%, 30% {background-image: url(../images/aot-2.jpg);}
+    31%, 40%{background-image: url(../images/fmab-1.jpg)}
+    41%, 50%{background-image: url(../images/fmab-2.jpg)}
+    51%, 60%{background-image: url(../images/dororo-1.jpg);}
+    61%, 70%{background-image: url(../images/dororo-2.jpg);}
+    71%, 89%{background-image: url(../images/dororo-1.jpg);}
+    90%,  100%{background-image: url(../images/death-note.jpg);}
+  }
+
+
+
+  .quotes {
+    max-width: 1000px;
+    margin: 50px auto;
+    display: flex;  
+  }
+  .card {
+    background-color: lightslategray;
+    color: white;
+    margin: 10px;
+    padding: 20px;
+    flex-shrink: 4;
+  }
+
+
+  /* Footer */
+  footer {
+    height: 50px;
+    flex-shrink: 0;
+    background-color: #333;
+    text-align: center;
+    color: white;
+    padding-bottom: 0px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+  }
