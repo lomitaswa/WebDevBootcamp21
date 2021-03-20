@@ -6,7 +6,7 @@
 
 /*  Navigation Bar */
 nav {
-    display: flex;
+
     background-color: #333;
     overflow: hidden;
     position: -webkit-sticky;
@@ -44,8 +44,10 @@ nav {
     margin: 0 auto;
     background-color:white;
     padding-top: 20px;
+    position: relative;
   }
   #carousel{
+    position: re;
     max-width: 768px;
     margin: 0 auto;
     animation: animate 40s infinite cubic-bezier(0.165, 0.84, 0.44, 1) alternate;
@@ -70,12 +72,15 @@ nav {
     max-width: 1000px;
     margin: 50px auto;
     display: flex;  
+    flex-wrap: unset;
+    text-align: center;
   }
   .card {
     background-color: lightslategray;
     color: white;
     margin: 10px;
     padding: 20px;
+    flex: 50%;
     flex-shrink: 4;
   }
 
