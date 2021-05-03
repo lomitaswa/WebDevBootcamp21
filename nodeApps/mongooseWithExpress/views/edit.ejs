@@ -1,0 +1,18 @@
+<%- include('partials/header') %> 
+    <div class="header">
+        <h1>Edit Product</h1>
+    </div>
+
+    <div class="product">
+        <form action="/products/<%= product._id %>?_method=PATCH" method="POST">
+            <input type="Number" name="price" placeholder="Product Price" value="<%=product.price %>">
+            <br>
+            <br>
+            <textarea name="desc" cols="30" rows="6"><%= product.desc %> </textarea>
+            <br>
+            <br>
+            <button>Update</button>
+        </form>
+    </div>
+
+<%- include('partials/footer') %> 

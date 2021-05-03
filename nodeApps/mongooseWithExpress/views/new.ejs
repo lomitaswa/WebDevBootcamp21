@@ -1,0 +1,22 @@
+<%- include('partials/header') %> 
+
+    <div class="header">
+        <h1>Add Product</h1>
+    </div>
+
+    <div class="product" >
+        <form action="/products" method="POST">
+            <input type="text" name="name" placeholder="Product Name">
+            <br>
+            <br>
+            <input type="number" name="price" placeholder="Product Price">
+            <br>
+            <br>
+            <textarea name="desc" cols="30" rows="6"></textarea>
+            <br>
+            <br>
+            <button>Save</button>
+        </form>
+    </div>
+
+<%- include('partials/footer') %> 

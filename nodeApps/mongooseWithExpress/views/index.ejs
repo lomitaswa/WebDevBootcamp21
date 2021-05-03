@@ -1,0 +1,18 @@
+<%- include('partials/header') %> 
+
+    <div class="container" >
+        <a href="/products/new">Add New Product</a>
+        <% for(let item of products) {%>
+            <div class="product">
+                <h3><%= item.name %> </h3>
+                <br>
+                <h4><%= item.price %> </h4> 
+                <br>
+                <p><%= item.desc %> </p>
+                <br>
+                <a href="/products/<%= item._id %> ">Show</a>
+            </div>
+        <% } %> 
+    </div>
+
+    <%- include('partials/footer') %> 
