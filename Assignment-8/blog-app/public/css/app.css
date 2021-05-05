@@ -1,3 +1,12 @@
+/* .homepage{
+    background-image: url('/img/cool-background.png');
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
 footer {
     height: 50px;
     flex-shrink: 0;
@@ -23,4 +32,8 @@ footer {
   .navbar-brand {
     font-family: "Orbitron", sans-serif;
     letter-spacing: 0.1em;
+  }
+
+  .card {
+      background-color: #455b99;
   }

@@ -4,14 +4,13 @@
 
     <div class="container" style="margin-top: 5rem;">
 
-        <h1 class="display-4 mx-auto">Blogs</h1>
         <%- include('../partials/flash')  %> 
 
         <div class="row">
-        <div class=" col-lg-12 mt-3">
-            <div class="card " style="width: 60vw;">
+        <div class=" col-lg-12 mt-3" >
+            <div class="card shadow p-3 mb-5 bg-body rounded border border-white" style="width: 60vw;">
               
-                <div class="card-body">
+                <div class="card-body" >
                   <h3 class="card-title"><strong><%= blog.title %> </strong></h3>
                   <div>
                     <h5 class="card-subtitle mb-2 text-muted"><strong><%= blog.author %> </strong></h5>
@@ -54,7 +53,7 @@
 
                 <div class="card mb-3">
                     <div class="card-header">
-                      <h5 class="card-title text-capitalize"><%= comment.user %></h5>
+                      <h5 class="card-title text-capitalize"><strong><%= comment.user %></strong></h5>
                     </div>
                     <div class="card-body">
                       
