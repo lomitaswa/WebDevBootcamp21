@@ -2,6 +2,7 @@ const express = require('express');
 const Blog = require('../models/blog');
 const Comment = require('../models/comment');
 const router = express.Router();
+const {isLoggedIn} = require('../middleware');
 
 // Get route
 router.get('/blogs', async (req, res) => {
@@ -17,12 +18,12 @@ router.get('/blogs', async (req, res) => {
 })
 
 // Get form to create a blog
-router.get('/blogs/new', (req, res) => {
+router.get('/blogs/new',isLoggedIn, (req, res) => {
     res.render('blogs/new');
 })
 
 // Create a new blog
-router.post('/blogs', async (req, res) => {
+router.post('/blogs', isLoggedIn, async (req, res) => {
 
     try {
         await Blog.create(req.body.blog)
@@ -51,7 +52,7 @@ router.get('/blogs/:id', async(req, res) => {
 })
 
 // Get form to edit a blog
-router.get('/blogs/:id/edit', async (req, res) => {
+router.get('/blogs/:id/edit', isLoggedIn, async (req, res) => {
 
     try {
         const blog = await Blog.findById(req.params.id);
@@ -65,7 +66,7 @@ router.get('/blogs/:id/edit', async (req, res) => {
     
 })
 // Edit a blog
-router.patch('/blogs/:id', async (req, res) => {
+router.patch('/blogs/:id', isLoggedIn, async (req, res) => {
     
     try {
         await Blog.findByIdAndUpdate(req.params.id, req.body.blog);
@@ -78,7 +79,7 @@ router.patch('/blogs/:id', async (req, res) => {
     }
 })
 
-router.delete('/blogs/:id', async(req, res) => {
+router.delete('/blogs/:id', isLoggedIn, async(req, res) => {
 
     try {
         await Blog.findByIdAndDelete(req.params.id);
@@ -94,11 +95,14 @@ router.delete('/blogs/:id', async(req, res) => {
 
 
 // Comment route
-router.post('/blogs/:id/comment', async (req, res) => {
+router.post('/blogs/:id/comment', isLoggedIn, async (req, res) => {
 
     try {
         const blog = await Blog.findById(req.params.id);
-        const comment = new Comment(req.body);
+        const comment = new Comment({
+            user: req.user.username,
+            ...req.body
+        });
 
         blog.comments.push(comment);
 

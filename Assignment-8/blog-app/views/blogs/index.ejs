@@ -2,15 +2,16 @@
 <%- include('../partials/navbar') %> 
     
 
-<div class="container" style="margin: 5px auto;">
+<div class="container" style="margin-top: 5rem;">
 
-    <h1>Blogs</h1>
+    <h1 class="text-center">Blogs</h1>
     <%- include('../partials/flash')  %>
-    <a href="/blogs/new">Add New Blog</a>
-    <div class="row">
+    <a href="/blogs/new" class="btn btn-primary ">Add New Blog</a>
+
+    <div class="row " style="margin-top: 1rem;">
         <%for(let blog of blogs){  %>
             <div >
-                <div class="card shadow p-3 mb-5 bg-body rounded">
+                <div class="card shadow p-3 mb-5 bg-body rounded border border-primary">
                     <div class="card-body">
                       <h5 class="card-title"><%= blog.title %> </h5>
                       <h6 class="card-subtitle mb-2 text-muted"><%= blog.author %> </h6>
